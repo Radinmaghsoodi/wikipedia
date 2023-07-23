@@ -1,5 +1,9 @@
 package ir.radindev.Wikipedia.data
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class ItemPost (
      val imgUrl :String ,
      val txtTitle:String,
@@ -8,4 +12,4 @@ data class ItemPost (
 // for trend fragment=>
      val isTrend:Boolean,
      val insight :String
-        )
+        ): Parcelable

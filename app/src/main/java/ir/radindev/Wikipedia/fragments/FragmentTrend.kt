@@ -1,5 +1,6 @@
 package ir.radindev.Wikipedia.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import ir.radindev.Wikipedia.MainActivity2
 import ir.radindev.Wikipedia.adapter.ExploreAdapter
 import ir.radindev.Wikipedia.adapter.ItemEvents
 import ir.radindev.Wikipedia.adapter.TrendAdapter
@@ -170,7 +172,9 @@ class FragmentTrend : Fragment(), ItemEvents {
     }
 
     override fun onItemClicked(itemPost: ItemPost) {
-        Toast.makeText(context, itemPost.txtTitle, Toast.LENGTH_SHORT).show()
+        val intent = Intent(activity, MainActivity2::class.java)
+        intent.putExtra( SEND_DATA_TO_SECOND_ACTIVITY,itemPost)
+        startActivity(intent)
     }
 
 
